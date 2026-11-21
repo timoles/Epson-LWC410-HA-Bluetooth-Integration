@@ -3,6 +3,7 @@ name = "lwc410-bt"
 version = "0.1.0"
 description = "Standalone Bluetooth Classic (SPP) client for the Epson LW-C410 label printer"
 readme = "README.md"
+license = "MIT"
 # stdlib only; the optional "png" extra adds Pillow for PNG image input,
 # "render" adds Pillow + segno for render.py (label templates with QR codes)
 requires-python = ">=3.9"

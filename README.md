@@ -74,6 +74,10 @@ the queue and retries (simulated printer), and the full round trip with Homebox 
 Not yet verified on Home Assistant OS itself: RFCOMM support of the HA OS kernel and
 adapter power-on via `bluetoothctl`.
 
+## License
+
+[MIT](LICENSE).
+
 Not affiliated with or endorsed by Seiko Epson. "Epson" and "LabelWorks" are
 trademarks of Seiko Epson Corporation. The protocol was reverse-engineered for
 interoperability.
