@@ -1,0 +1,41 @@
+name: LW-C410 Label Printer
+version: "0.3.0"
+slug: lwc410_print
+description: Print text, QR and Homebox labels on an Epson LabelWorks LW-C410 over Bluetooth
+url: https://github.com/timoles/Epson-LWC410-HA-Bluetooth-Integration
+arch:
+  - amd64
+  - aarch64
+startup: application
+boot: auto
+# Bluetooth sockets only exist in the host network namespace.
+host_network: true
+# bluetoothctl talks to the host's BlueZ over D-Bus (adapter power on).
+host_dbus: true
+privileged:
+  - NET_ADMIN
+options:
+  printer_mac: "44:B7:D0:62:AF:FA"
+  tape_mm: "12"
+  margin_mm: 2.0
+  api_token: ""
+  homebox_url: "https://homebox.example.com"
+  homebox_api_key: ""
+  qr_uppercase: false
+  retry_minutes: 120
+  retry_interval_s: 15
+  port: 7099
+  log_level: info
+schema:
+  printer_mac: "match(^([0-9A-Fa-f]{2}:){5}[0-9A-Fa-f]{2}$)"
+  tape_mm: list(4|6|9|12|18)
+  margin_mm: float(0,20)
+  api_token: password?
+  homebox_url: url?
+  homebox_api_url: url?
+  homebox_api_key: password?
+  qr_uppercase: bool
+  retry_minutes: int(0,1440)
+  retry_interval_s: int(5,600)
+  port: port
+  log_level: list(debug|info|warning|error)

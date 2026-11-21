@@ -1,0 +1,18 @@
+[project]
+name = "lwc410-bt"
+version = "0.1.0"
+description = "Standalone Bluetooth Classic (SPP) client for the Epson LW-C410 label printer"
+readme = "README.md"
+# stdlib only; the optional "png" extra adds Pillow for PNG image input,
+# "render" adds Pillow + segno for render.py (label templates with QR codes)
+requires-python = ">=3.9"
+dependencies = []
+
+[project.optional-dependencies]
+png = ["pillow>=10"]
+render = ["pillow>=10.1", "segno>=1.6"]
+
+# Virtual project: nothing is built or installed, `uv sync` just creates the
+# .venv (and installs the "png" extra when asked). Run via `uv run lwc410_bt.py …`.
+[tool.uv]
+package = false

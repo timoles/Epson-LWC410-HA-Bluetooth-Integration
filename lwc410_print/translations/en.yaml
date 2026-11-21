@@ -1,0 +1,36 @@
+configuration:
+  printer_mac:
+    name: Printer Bluetooth address
+    description: MAC address of the LW-C410 (shown by `lwc410_bt.py scan`).
+  tape_mm:
+    name: Default tape width (mm)
+    description: Cassette width used when a request does not say. Jobs are refused if the loaded cassette differs.
+  margin_mm:
+    name: Margin (mm)
+    description: Blank tape before and after each label.
+  api_token:
+    name: API token
+    description: If set, requests need "Authorization Bearer <token>". Strongly recommended - the service listens on your LAN.
+  homebox_url:
+    name: Homebox URL (for QR codes)
+    description: Homebox address as your phone reaches it, e.g. https://homebox.example.com. Encoded into the QR codes.
+  homebox_api_url:
+    name: Homebox API URL
+    description: Optional address the add-on uses to look up items (e.g. the NAS on your LAN). Defaults to the Homebox URL.
+  homebox_api_key:
+    name: Homebox API key
+    description: Optional. Lets the add-on look up name and location by asset id (Homebox -> Profile -> API keys).
+  qr_uppercase:
+    name: Uppercase QR URLs
+    description: Encode /a/<asset id> URLs in uppercase (alphanumeric QR mode - more error correction at the same size). Homebox opens them fine (tested with v0.27).
+  retry_minutes:
+    name: Wait for printer (minutes)
+    description: If the printer is off or out of range, keep the job and retry for this long (0 = fail immediately). Switch the printer on and queued labels print.
+  retry_interval_s:
+    name: Retry interval (seconds)
+    description: How often to try to reach the printer while jobs are waiting.
+  port:
+    name: HTTP port
+  log_level:
+    name: Log level
+    description: debug also hexdumps the Bluetooth traffic.
